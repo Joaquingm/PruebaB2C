@@ -79,7 +79,6 @@ fetch("https://raw.githubusercontent.com/ITBconsult/json-data/master/data.json")
     addEventListener("click", function(){alert("Record UPDATED")});
 
     insertLineBreak(document.getElementById("dataForm"));
-    insertLineBreak(document.getElementById("dataForm"));
 
     
 

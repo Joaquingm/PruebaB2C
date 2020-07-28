@@ -23,6 +23,8 @@ fetch("https://raw.githubusercontent.com/ITBconsult/json-data/master/data.json")
     oTitle.appendChild(oTitleText);
 
     createSortButtons();
+    createFilterInputs();
+    insertLineBreak(document.getElementById("mainContainer"));
 
     let oLabel = document.createElement("LABEL");
     let oText = document.createTextNode("Name : ");
@@ -174,7 +176,6 @@ fetch("https://raw.githubusercontent.com/ITBconsult/json-data/master/data.json")
   function createSortButtons(){
     let oDiv = document.createElement("div");
     oDiv.id = "sortButtonsContainer";
-    //let sortButtonsContainer = document.getElementById("sortButtonsContainer");
     mainContainer.appendChild(oDiv);
 
 
@@ -202,5 +203,23 @@ fetch("https://raw.githubusercontent.com/ITBconsult/json-data/master/data.json")
     sortButtonsContainer.appendChild(oButton);
     oButton.addEventListener("click", sortListByAge);
     insertLineBreak(document.getElementById("mainContainer")); 
+
+  }
+
+  function createFilterInputs(){
+    let oDiv = document.createElement("div");
+    oDiv.id = "filterInputsContainer";
+    mainContainer.appendChild(oDiv);
+
+    let oLabel = document.createElement("LABEL");
+    let oText = document.createTextNode("Name filter : ");
+    oLabel.setAttribute("for", "name");
+    oLabel.appendChild(oText);
+    document.getElementById("filterInputsContainer").insertBefore(oLabel, document.getElementById("name"));
+
+    let oInput = document.createElement("INPUT");
+    oInput.setAttribute("type", "text");
+    oInput.setAttribute("value", "Insert name");
+    document.getElementById("filterInputsContainer").appendChild(oInput);
 
   }
